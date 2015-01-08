@@ -1,0 +1,11 @@
+C:\Users\jh222vp\Desktop\Weather\Weather.Domain\bin\Weather.Domain.dll.config
+C:\Users\jh222vp\Desktop\Weather\Weather.Domain\bin\Weather.Domain.dll
+C:\Users\jh222vp\Desktop\Weather\Weather.Domain\bin\Weather.Domain.pdb
+C:\Users\jh222vp\Desktop\Weather\Weather.Domain\bin\EntityFramework.dll
+C:\Users\jh222vp\Desktop\Weather\Weather.Domain\bin\EntityFramework.SqlServer.dll
+C:\Users\jh222vp\Desktop\Weather\Weather.Domain\bin\Newtonsoft.Json.dll
+C:\Users\jh222vp\Desktop\Weather\Weather.Domain\bin\EntityFramework.xml
+C:\Users\jh222vp\Desktop\Weather\Weather.Domain\bin\EntityFramework.SqlServer.xml
+C:\Users\jh222vp\Desktop\Weather\Weather.Domain\bin\Newtonsoft.Json.xml
+C:\Users\jh222vp\Desktop\Weather\Weather.Domain\obj\Debug\Weather.Domain.dll
+C:\Users\jh222vp\Desktop\Weather\Weather.Domain\obj\Debug\Weather.Domain.pdb
