@@ -8,6 +8,6 @@ namespace Weather.Domain
 {
     public interface IWeatherGeoNameService
     {
-        IEnumerable<Location> GetLocations(string name);
+        IEnumerable<Location> GetLocations(string location);
     }
 }

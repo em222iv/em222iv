@@ -1,0 +1,16 @@
+﻿@*@model Weather.ViewModels.WeatherIndexViewModel
+
+@{
+    Layout = null;
+}
+
+
+<h3><u>@Model.name</u></h3>
+<div>
+    <ul>
+        @foreach (var item in Model.forecast)
+        {
+            <li>@item.temperature</li>
+        }
+    </ul>
+</div>*@

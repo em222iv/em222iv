@@ -19,5 +19,8 @@ namespace Weather.Domain
         public int temperature { get; set; }
         public int symbolID { get; set; }
         public System.DateTime timestamp { get; set; }
+        public Nullable<int> period { get; set; }
+    
+        public virtual Location Location { get; set; }
     }
 }

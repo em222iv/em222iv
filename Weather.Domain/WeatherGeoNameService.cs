@@ -24,7 +24,22 @@ namespace Weather.Domain
 
         public IEnumerable<Location> GetLocations(string locationName)
         {
-            throw new NotImplementedException();
+            var locations = _repository.FindLocations(locationName);
+
+            if (locations.Count() == 0)
+            {
+                locations = _webservice.GetLocations(locationName);
+                foreach (var item in locations)
+                {
+                    if(locationName == item.City)
+                    {
+                        _repository.AddLocation(item);
+                    }
+                }
+                _repository.Save();
+                locations = _repository.FindLocations(locationName);
+            }
+            return locations;
         }
 
         public void Dispose()

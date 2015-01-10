@@ -2,21 +2,39 @@
 @{
     ViewBag.Title = "Index";
 }
+@Styles.Render("~/Content/css")
 
 <h2>Index</h2>
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="text-center">
+                @Html.EditorFor(model => model.City)
+                @Html.ValidationMessageFor(model => model.City, String.Empty, new { @class = "text-danger" })
+                @Html.ValidationSummary(true, String.Empty, new { @class = "text-danger" })
 
-        <div class="form-group">
-            <div class="col-md-offset-1 col-md-offset-10">
                 <input type="submit" value="Get Location" class="btn btn-primary btn-sm" />
-
             </div>
         </div>
+    </div>
+
+    if (Model != null)
+    {
+        foreach (var item in Model.location)
+        {
+            <div class="panel panel-default">
+                <div class="panel-body text-center">           
+                        <div class="col-md-1">@Html.ActionLink(item.City + "," + item.Region, "Weather", item)</div>
+                </div>
+            </div>
         }
+    }
+}
+
+
 
 
 

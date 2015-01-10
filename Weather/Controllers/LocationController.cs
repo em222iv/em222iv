@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Weather.Domain;
 using Weather.Domain.Webservices;
 using Weather.ViewModels;
 
@@ -10,17 +11,20 @@ namespace Weather.Controllers
 {
     public class LocationController : Controller
     {
-        private IGeoNameWebService _service;
+        private IWeatherGeoNameService _service;
+        private IWeatherForecastService _forecastservice;
+        
 
         public LocationController()
-            : this(new GeoNameWebService())
+            : this(new WeatherGeoNameService(), new WeatherForecastService())
         {
             // Empty!
         }
 
-        public LocationController(IGeoNameWebService service)
+        public LocationController(IWeatherGeoNameService service, IWeatherForecastService forecastservice)
         {
             _service = service;
+            _forecastservice = forecastservice;
         }
 
         public ActionResult Index()
@@ -30,13 +34,42 @@ namespace Weather.Controllers
         // POST: /
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index([Bind(Include = "ScreenName")] WeatherIndexViewModel model)
+        public ActionResult Index([Bind(Include = "City")] WeatherIndexViewModel model)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    model.location = _service.GetLocations(model.name);
+                    model.location = _service.GetLocations(model.City);
+                    if (model.location.Count() == 1) 
+                    {
+                       
+                        return RedirectToAction("Weather",model.location.First());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Get the innermost exception.
+               // TempData["success"] = "Person tillagd.";
+                while (ex.InnerException != null)
+                {
+                    ex = ex.InnerException;
+                }
+                ModelState.AddModelError(String.Empty, ex.Message);
+            }
+            return View(model);
+        }
+
+        public ActionResult Weather(WeatherIndexViewModel model)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    model.forecast = _forecastservice.GetForecasts(model.ID, model.City, model.Region);
+
+                
                 }
             }
             catch (Exception ex)
@@ -48,7 +81,7 @@ namespace Weather.Controllers
                 }
                 ModelState.AddModelError(String.Empty, ex.Message);
             }
-            return View(model);
+            return View("Forecast",model);
         }
     }
 }

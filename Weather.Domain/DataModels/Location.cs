@@ -14,10 +14,17 @@ namespace Weather.Domain
     
     public partial class Location
     {
+        public Location()
+        {
+            this.forecasts = new HashSet<forecast>();
+        }
+    
         public int ID { get; set; }
         public string City { get; set; }
         public string Region { get; set; }
         public string Lat { get; set; }
         public string Long { get; set; }
+    
+        public virtual ICollection<forecast> forecasts { get; set; }
     }
 }

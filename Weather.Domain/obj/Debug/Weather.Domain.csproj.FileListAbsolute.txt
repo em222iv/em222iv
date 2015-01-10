@@ -9,3 +9,15 @@ C:\Users\jh222vp\Desktop\Weather\Weather.Domain\bin\EntityFramework.SqlServer.xm
 C:\Users\jh222vp\Desktop\Weather\Weather.Domain\bin\Newtonsoft.Json.xml
 C:\Users\jh222vp\Desktop\Weather\Weather.Domain\obj\Debug\Weather.Domain.dll
 C:\Users\jh222vp\Desktop\Weather\Weather.Domain\obj\Debug\Weather.Domain.pdb
+C:\Users\jh222vp\Desktop\Weather\Weather.Domain\obj\Debug\Weather.Domain.csprojResolveAssemblyReference.cache
+\\psf\Home\Desktop\Weather\Weather.Domain\obj\Debug\Weather.Domain.dll
+\\psf\Home\Desktop\Weather\Weather.Domain\obj\Debug\Weather.Domain.pdb
+\\psf\Home\Desktop\Weather\Weather.Domain\bin\Weather.Domain.dll.config
+\\psf\Home\Desktop\Weather\Weather.Domain\bin\Weather.Domain.dll
+\\psf\Home\Desktop\Weather\Weather.Domain\bin\Weather.Domain.pdb
+\\psf\Home\Desktop\Weather\Weather.Domain\bin\EntityFramework.dll
+\\psf\Home\Desktop\Weather\Weather.Domain\bin\EntityFramework.SqlServer.dll
+\\psf\Home\Desktop\Weather\Weather.Domain\bin\Newtonsoft.Json.dll
+\\psf\Home\Desktop\Weather\Weather.Domain\bin\EntityFramework.xml
+\\psf\Home\Desktop\Weather\Weather.Domain\bin\EntityFramework.SqlServer.xml
+\\psf\Home\Desktop\Weather\Weather.Domain\bin\Newtonsoft.Json.xml

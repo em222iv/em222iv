@@ -1,0 +1,31 @@
+﻿@model Weather.ViewModels.WeatherIndexViewModel
+@{
+    ViewBag.Title = "Index";
+}
+@Styles.Render("~/Content/css")
+
+<h1><u>@Model.City, @Model.Region</u></h1>
+<div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <form class="form-inline">
+                @foreach (var item in Model.forecast)
+                {
+
+                    <div class="form-group">
+                        <div class="thumbnail">
+                            <img src="http://api.met.no/weatherapi/weathericon/1.1/?symbol=@item.symbolID;content_type=image/png" />
+                            <div class="caption text-center">
+                                <h3>@item.temperature °C</h3>
+                                <h3>@item.timestamp.AddDays(Model.count++).DayOfWeek</h3>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </form>
+        </div>
+    </div>
+    @Html.ActionLink("Go back", "Index", "", htmlAttributes: new { @class = "btn btn-success" })
+</div>
+

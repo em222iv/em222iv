@@ -8,7 +8,6 @@ namespace Weather.Domain
         [MetadataType(typeof(Location_Metadata))]
         public partial class Location
         {
-            public Location() { }
             public Location(JToken locationToken)
                 : this()
             {
@@ -22,7 +21,7 @@ namespace Weather.Domain
             {
                 [Required]
                 [Display(Name = "Sök plats")]
-                public string name { get; set; }
+                public string City { get; set; }
             }
         }
 }
